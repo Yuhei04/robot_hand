@@ -1,0 +1,68 @@
+# Copy this file before editing it for a specific prototype.
+
+project:
+  name: robot_hand
+  prototype: prototype_001
+  owner: ""
+
+controller:
+  board: esp32-c3
+  serial_port: /dev/tty.usbmodemXXXX
+  baud: 115200
+  control_loop_hz: 50
+
+power:
+  logic_voltage_v: 3.3
+  servo_voltage_v: 5.0
+  bench_supply_current_limit_a: 1.0
+  emergency_stop_available: false
+
+safety:
+  default_angle_min_deg: 80
+  default_angle_max_deg: 100
+  absolute_angle_min_deg: 0
+  absolute_angle_max_deg: 180
+  test_one_servo_at_a_time: true
+  disconnect_load_for_first_motion: true
+
+servos:
+  - id: servo_0
+    role: index_flexor
+    model: A0090
+    signal_pin: 4
+    pwm_frequency_hz: 50
+    pulse_min_us: 500
+    pulse_center_us: 1500
+    pulse_max_us: 2500
+    angle_min_deg: 80
+    angle_home_deg: 90
+    angle_max_deg: 100
+    encoder:
+      present: false
+      counts_per_rev: null
+      channel_a_pin: null
+      channel_b_pin: null
+    current_sensor:
+      present: false
+      analog_pin: null
+      amps_per_volt: null
+    mechanical_limits:
+      positive_direction: flexion
+      home_position: unknown
+      hard_stop_present: true
+    test_limits:
+      first_angle_min_deg: 80
+      first_angle_max_deg: 100
+      notes: "Start with horn/tendon disconnected if possible."
+
+serial_protocol:
+  commands:
+    - HELP
+    - PING
+    - ENABLE
+    - DISABLE
+    - STOP
+    - HOME
+    - LIMIT <min_deg> <max_deg>
+    - ANGLE <deg>
+    - PULSE <microseconds>
