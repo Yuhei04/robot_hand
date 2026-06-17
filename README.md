@@ -8,9 +8,7 @@ move toward calibrated finger control and coordinated grasp motions.
 
 ## Demo
 
-<video src="assets/robot_hand_demo.mp4" controls muted loop playsinline width="360"></video>
-
-[Download the demo video](assets/robot_hand_demo.mp4)
+![Robot hand demo](assets/robot_hand_demo.webp)
 
 ## Repository layout
 
