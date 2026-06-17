@@ -6,6 +6,12 @@ The current prototype uses 9g A0090 servos with an ESP32-C3 controller. The
 first milestone is to test one servo at a time with strict angle limits, then
 move toward calibrated finger control and coordinated grasp motions.
 
+## Demo
+
+<video src="assets/robot_hand_demo.mp4" controls muted loop playsinline width="360"></video>
+
+[Download the demo video](assets/robot_hand_demo.mp4)
+
 ## Repository layout
 
 - `config/robot_hand.example.yaml`: hardware configuration template.
